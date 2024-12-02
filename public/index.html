@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Monitor de Conexión a Internet</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <!-- Menú de usuario -->
+  <section class="user-menu-container">
+    <button id="userMenuButton" class="user-menu-button">
+      <i class="fas fa-user"></i> Usuario
+    </button>
+    <div id="userMenuDropdown" class="user-menu-dropdown">
+      <button id="logoutButton" class="logout-button">Cerrar Sesión</button>
+    </div>
+  </section>
+
+  <!-- Encabezado de la página -->
+  <header>
+    <h1>Monitor de Red</h1>
+  </header>
+
+  <!-- Contenedor principal -->
+  <main>
+    <!-- Contenedor de estado de dispositivos -->
+    <section id="device-status-container" class="device-status-container">
+      <h2>Estado de los Dispositivos</h2>
+      <!-- Los dispositivos se generarán dinámicamente en el script.js -->
+    </section>
+
+    <!-- Contenedor de alertas -->
+    <section class="alerts-container" aria-labelledby="alerts-heading">
+      <h2 id="alerts-heading">Alertas</h2>
+      <div id="alerts-list" class="alerts-list">
+        <!-- Las alertas se generarán dinámicamente en script.js -->
+      </div>
+    </section>
+
+  
+    <!-- Sección para seleccionar el dispositivo por IP -->
+    <div class="selector-container">
+      <label for="ip-selector">Seleccionar Dispositivo (IP):</label>
+      <select id="ip-selector">
+        <option value="">Seleccionar IP</option>
+        <!-- Las opciones se llenarán dinámicamente con JavaScript -->
+      </select>
+    </div>
+
+    <!-- Contenedor para mostrar el gráfico del dispositivo seleccionado -->
+    <div id="chart-container" class="chart-container">
+      <!-- El gráfico se generará dinámicamente en el script.js -->
+    </div>
+
+    <!-- Botones de reporte y consultas -->
+    <section class="report-button-container">
+      <div class="button-group">
+        <a href="reporte.html" id="reportButton" class="report-button">Ver Reporte</a>
+        <a href="consultas.html" id="consultButton" class="consult-button">Consultas</a>
+        <a href="Vulnerabilidad.html" id="vulnerabilityButton" class="vulnerability-button">Escanear Vulnerabilidades</a>
+        <a href="control.html" id="controButton" class="contro-button">Monitoreo de Ip</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2024 Monitor de Red. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Inclusión del script -->
+  <script src="script.js"></script>
+
+</body>
+</html>

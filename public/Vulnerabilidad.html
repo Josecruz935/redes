@@ -1,0 +1,32 @@
+<!-- Sección para escanear vulnerabilidades -->
+<section class="vulnerability-container">
+<link rel="stylesheet" href="vuln.css">
+  <h2>Escanear Vulnerabilidades de Dispositivo</h2>
+  <label for="ip-vulnerability">Ingresa la IP del dispositivo:</label>
+  <input type="text" id="ip-vulnerability" placeholder="Ej. 192.168.0.101" />
+  <button onclick="escanearVulnerabilidades()">Escanear Vulnerabilidades</button>
+  
+  <h3>Resultados del Escaneo:</h3>
+  <pre id="vulnerability-results"></pre>
+</section>
+
+<script>
+  async function escanearVulnerabilidades() {
+    const ip = document.getElementById('ip-vulnerability').value;
+    if (!ip) {
+      alert('Por favor, ingresa una IP');
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/escanear-vulnerabilidades?ip=${ip}`);
+      const data = await response.json();
+
+      // Mostrar los resultados en el frontend
+      document.getElementById('vulnerability-results').textContent = data.resultado;
+    } catch (error) {
+      console.error('Error al escanear vulnerabilidades:', error);
+      alert('Hubo un error al escanear las vulnerabilidades.');
+    }
+  }
+</script>

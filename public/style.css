@@ -1,0 +1,443 @@
+/* Estilos generales */
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding-top: 20px;
+  background: linear-gradient(to bottom, #022919, #104219); /* Gradiente para el fondo */
+  color: #ecf0f1;
+  margin: 0;
+}
+
+h1 {
+  font-size: 36px;
+  color: #ecf0f1;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor de Estado de Dispositivos */
+.device-status-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  animation: fadeIn 2s ease-out; /* Animación sutil para el contenedor */
+}
+
+/* Estilo para las tarjetas */
+.device-card {
+  width: 250px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-size: 14px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  border: 1px solid #ddd;
+  margin: 10px;
+  position: relative; /* Para permitir los cambios de posición y sombra */
+}
+
+/* Estilos según el estado de conexión */
+.device-card.connected {
+  background-color: #e6f9f0;
+  border-left: 6px solid #48c78e;
+}
+
+.device-card.disconnected {
+  background-color: #ffe6e6;
+  border-left: 6px solid #f64e60;
+}
+
+/* Efecto al pasar el mouse (hover) */
+.device-card:hover {
+  transform: scale(1.05); /* Efecto suave de aumento */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Títulos de las tarjetas */
+.device-card h2 {
+  font-size: 20px;
+  color: #34495e;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* Descripción dentro de las tarjetas */
+.device-card p {
+  margin: 10px 0;
+  color: #636363;
+  font-size: 14px;
+}
+
+/* Animación para la entrada de las tarjetas */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animación de entrada de las tarjetas */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+/* Contenedor de Alertas */
+.alerts-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.alerts-container h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #2d3748;
+}
+
+.alerts-list {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* Estilos para las alertas */
+.alert-item {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 15px;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.alert-item.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.alert-item.alert-info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.alert-item:hover {
+  background-color: #ffeeba;
+}
+
+
+/* Tabla con gráficos */
+.table-container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  overflow-x: auto;
+  margin-top: 40px;
+  padding: 20px;
+  color:#333;
+  background-color: #f4fbf7;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+th {
+  background-color: #17bf3ba1;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  letter-spacing: 1px;
+}
+
+td {
+  background-color: #f9fafb;
+  color: #636363;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+td:hover {
+  background-color: #e2f0fe;
+  transform: scale(1.05);
+}
+
+
+table tr:hover td {
+  background-color: #e6f7ff;
+}
+
+table tr:first-child th {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+table tr:last-child td {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Estilos para la tabla responsive */
+@media (max-width: 768px) {
+  th, td {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/*graficos*/
+/* Contenedor del gráfico */
+* Tabla con gráficos */
+.table-container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  overflow-x: auto;
+  margin-top: 40px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 15px 20px; /* Más espacio en las celdas */
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 16px;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #2d3748;
+  text-transform: uppercase;
+}
+
+td {
+  color: #636363;
+  word-wrap: break-word;
+}
+
+.chart-container {
+  width: 100%;
+  height: 300px;
+  min-height: 250px;
+  position: relative;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 8px;
+}
+
+/* Botón de reporte */
+.report-button-container {
+  margin-top: 30px;
+}
+
+#reportButton {
+  background-color: #17bf3ba1; /* Mismo color que el de vulnerabilidad */
+  color: white;
+  font-size: 1.1em; /* Tamaño de fuente similar al de vulnerabilidad */
+  padding: 10px 20px;
+  border: none; /* Eliminar borde para un estilo más limpio */
+  border-radius: 5px; /* Borde redondeado igual al de vulnerabilidad */
+  cursor: pointer; /* Asegura que el cursor sea de tipo pointer */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+#reportButton:hover {
+  background-color: #d32f2f; /* Mismo color al hacer hover que el de vulnerabilidad */
+}
+
+.consult-button-container {
+  margin-top: 30px;
+}
+
+#consultButton {
+  background-color: #17bf3ba1; /* Mismo color que el de vulnerabilidad */
+  color: white;
+  font-size: 1.1em; /* Tamaño de fuente similar al de vulnerabilidad */
+  padding: 10px 20px;
+  border: none; /* Eliminar borde para un estilo más limpio */
+  border-radius: 5px; /* Borde redondeado igual al de vulnerabilidad */
+  cursor: pointer; /* Asegura que el cursor sea de tipo pointer */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+#consultButton:hover {
+  background-color: #d32f2f; /* Mismo color al hacer hover que el de vulnerabilidad */
+}
+
+
+
+
+
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+  .device-status-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .device-card {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  .alerts-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .alerts-list {
+    max-height: 250px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+/* Botón de escanear vulnerabilidades */
+.vulnerability-button {
+  background-color: #17bf3ba1;
+  color: white;
+  font-size: 1.1em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.vulnerability-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Contenedor del menú de usuario */
+.user-menu-container {
+  position: absolute;
+  top: 20px; /* Puedes ajustar la posición según necesites */
+  left: 20px; /* Asegura que esté a la izquierda */
+  display: inline-block;
+}
+
+/* Botón de usuario */
+.user-menu-button {
+  background-color: #4CAF50; /* Verde elegante */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Centrar el ícono y el texto verticalmente */
+  gap: 8px; /* Espacio entre el ícono y el texto */
+  transition: background-color 0.3s ease;
+}
+
+.user-menu-button i {
+  font-size: 18px; /* Tamaño del ícono */
+}
+
+/* Menú desplegable */
+.user-menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0; /* Se ajusta para que el menú se muestre a la izquierda */
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 200px;
+  z-index: 1;
+}
+
+.user-menu-dropdown button {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background-color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-menu-dropdown button:hover {
+  background-color: #f0f0f0;
+}
+
+.user-menu-dropdown button:last-child {
+  border-bottom: none;
+}
+
+/* Mostrar el menú cuando esté activo */
+.user-menu-dropdown.active {
+  display: block;
+}

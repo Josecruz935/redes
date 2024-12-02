@@ -1,0 +1,231 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background: #0c0f14; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 0 20px;
+  }
+  
+  /* Encabezado */
+  header {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 2px solid #1e3d58;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #00d2ff; /* Color futurista azul */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
+  }
+  
+  /* Menú de usuario */
+  .user-menu-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .user-menu-button {
+    background-color: #1e3d58;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .user-menu-button:hover {
+    background-color: #00d2ff;
+  }
+  
+  .user-menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #1e3d58;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .user-menu-dropdown button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s;
+  }
+  
+  .user-menu-dropdown button:hover {
+    background-color: #00d2ff;
+  }
+  
+  .user-menu-container:hover .user-menu-dropdown {
+    display: block;
+  }
+  
+  /* Sección de dispositivos */
+  .device-status-container {
+    margin-top: 50px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #00d2ff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
+  }
+  
+  #device-status-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Botones */
+  button, a {
+    text-decoration: none;
+    background: #00d2ff;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  button:hover, a:hover {
+    background: #0099b7;
+    transform: scale(1.1);
+  }
+  
+  /* Contenedor para seleccionar dispositivo */
+  .selector-container {
+    background: #1e3d58;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  label {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 1px solid #00d2ff;
+    background-color: #121a25;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: #00d2ff;
+  }
+  
+  /* Contenedor de gráfico */
+  .chart-container {
+    margin-top: 40px;
+    background: #1e3d58;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Alertas */
+  .alerts-container {
+    margin-top: 50px;
+  }
+  
+  .alerts-list {
+    margin-top: 20px;
+    list-style: none;
+  }
+  
+  .alerts-list li {
+    background: #1e3d58;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .alerts-list li:hover {
+    transform: translateY(-5px);
+  }
+  
+  .alerts-list li:nth-child(odd) {
+    background: #283b4d;
+  }
+  
+  /* Botón de reporte y consulta */
+  .report-button-container {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .report-button, .vulnerability-button {
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 15px 35px;
+  }
+  
+  .report-button-container a {
+    margin: 10px;
+    text-decoration: none;
+  }
+  
+  /* Pie de página */
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #aaa;
+    font-size: 14px;
+    border-top: 2px solid #1e3d58;
+  }
+  
+  footer p {
+    font-size: 1rem;
+  }
+  
+  /* Estilo de los resultados de vulnerabilidades */
+  #vulnerability-results {
+    white-space: pre-wrap;
+    background: #121a25;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: #00d2ff;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+  }
+  
